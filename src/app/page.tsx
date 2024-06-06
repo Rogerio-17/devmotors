@@ -1,9 +1,15 @@
-import { Submenu } from "@/components/home/submenu";
+import { Submenu } from '@/components/home/submenu'
+import { getDataHome } from '@/utils/actions/get-data'
+import { HomeProps } from '@/utils/home.type'
 
-export default function Home() {
-  return (
-    <section>
-      <Submenu />
-    </section>
-  );
+export default async function Home() {
+    const { object }: HomeProps = await getDataHome()
+
+    console.log(object)
+
+    return (
+        <section>
+            <Submenu />
+        </section>
+    )
 }
